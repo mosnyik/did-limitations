@@ -39,7 +39,8 @@ With a DID, a verifier would be able to resolve it into a [DID Document](https:/
 ---
 
  - Life-Long Credential
- - - 
+ - - If we want to make a comparism between [Verifiable Educational Credentials](https://www.w3.org/TR/did-use-cases/#bib-vc-data-model) and the traditional ones, it is easy to see that the verifiable Educational Credentials offer many benefits, which include recipients being able to store and share there credentials with third parties, who in turn are able to independently not just verify the credential but also authenticate the identity of the recipient without neccessarily contacting the issuer and without dependence of the ussual countries treaty-based bureauratic process for international verification of credentials. This makes it possible for a recipient to own his/her credentials for a lifetime that can be used without borders, even when to issuing organization goes oout of business.
+  
  - ---
  - Prescriptions
  - ---
@@ -54,7 +55,13 @@ With a DID, a verifier would be able to resolve it into a [DID Document](https:/
 - The Customs and the downstream customers of the products as mentioned in the Enterprise Identifier above are required to use the same documentation and digital signature to verify the product, this could be problematic. Governments usually create ad-hoc solutions for their inports. This would make securing the global supply chain difficult as because each government have her own way of identifying coporations that downstream customers intergrate with and securing her supply chain. Now the challeng would be if you are a global company, it means intergrating with many different supply chain system with different capabilities. That means to secure the supply chain with the downstream customers would depend on country specific coporate identification and Public Key Infrastructure solutions which would in summary drive up cost of doing business across border for the global comapanies.
 
 ---
-- 
+- Even with such great promise from the Verifiable Educational Credential use case, there a a coule of challenges that befall the approach
+- - There is a problem with this however, especially if the traditional public-private key pair identifier is used because of [rotating keys](https://developer.okta.com/docs/concepts/key-rotation/), and especially if the identifier in the credential is simplly a public key and the private key is used for authentication.
+- 1. Because the credential has been signed with the public key, it is virtually impossible to to update the the signing key of the credetial. If need be, the recipient must have to contact the issuer to request a re-issuing with a different identifier and if the issuer iss unavaialable or not willing to re-issue the credential, the reciepeint is unable to update he cryptographic material.
+- 2. If the key rotation of the credentials depend on a centralized key registry or authourity, then that becomes a single point of failure and thus may not be such an improvement especially for credentials held longer.
+- 3. If the technology used to encrypt the credential becomes outdated, it woulld not to update it and the reciepient would have to contact the issuer for re-issuance.
+
+If the credential is expected to last a lifetime, it is especially problematic to when considering key rotation because it i=should be anticipated that an individual will change their key management system or strategy many times over the coure of their lifetime.
 ### **What does the specifications of DID allow us to do?**
 
 As we have established, DIDs do not exist on a single registry. DIDs are implemented using [Methods](https://www.w3.org/TR/did-core/#methods) which refers to the approach or implementation of the DID. Different DID methods have different implementations, some are implemented on a Decentralized Ledge Technology (DLT) eg [btcr](), [ethr](), [3]() or stored on a specialized site eg GitHub, or on ephemeral DIDs with lighter requirements eg the ones used on IoT devices 
@@ -63,22 +70,3 @@ As we have established, DIDs do not exist on a single registry. DIDs are impleme
 
 
 
-
-
-<!--(https://w3c.github.io/did-core/#referring-to-verification-methods)--> 
-  
-
-  <!--
-- **Adoption issue** : With an estimated population of about [8 billion people](https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/wpp2022_summary_of_results.pdf), and more than half of those using various digital products, there needs to be a large-scale buy-in to get the technology to mainstream adoption. Technology giants like Apple, Google, Microsoft, Facebook etc would need to incorporate the system into their products to get it to speedy and broad adoption.
-
-
-- **Exclusion** : For mass adoption, we look at the poor nations of the world to also be able to afford to key into this technology revolution, but the gadgets required to make use of these services are relatively expensive and would not reach the grassroots just yet
-
-
-- **Education** : Being a new piece of technology, blockchain is not quite yet intuitive to most of its users as such, and it is paramount for users to be able to grant/restrict permissions to what credentials they want to share per time.
--->
-
-
-<!--DIDs have alot of promises for making life easer for both users and enterprises as it proposes to make processes faster, convinient and more efficient. It however comes with some limitations and that is what we are going to consider, but first first let us talk about what we casn do with DIDs.-->
-
-<!-- To create a DID, the entity would create a SSI and generate a pair of private and public keys. The generated public key is associated with the DID and the private key is used to prove ownership of the credentials associated with the public key or the DID.-->
