@@ -80,10 +80,12 @@ DID secure communication comes with some experience challenges though, they incl
 - 2. Automation of connection management eg key rotation, updating service endpoints, routing via agents
   
   Users should be able to interact with, modify and audit processes as needed. Because users would likely interact with secure messaging protocols via a number of different interfaces and devices and for a variety of different purposes though the logic and the experience should be coherent and consistent across different platforms.
-### **What does the specifications of DID allow us to do?**
-<!--
-As we have established, DIDs do not exist on a single registry. DIDs are implemented using [Methods](https://www.w3.org/TR/did-core/#methods) which refers to the approach or implementation of the DID. Different DID methods have different implementations, some are implemented on a Decentralized Ledge Technology (DLT) eg [btcr](https://w3c-ccg.github.io/didm-btcr/), [ethr](https://github.com/decentralized-identity/ethr-did-resolver/blob/master/doc/did-method-spec.md), [3](https://developers.ceramic.network/docs/advanced/standards/accounts/3id-did/) or stored on a specialized site eg GitHub, or on ephemeral DIDs with lighter requirements eg the ones used on IoT devices 
--->
+
+
+  <!-- ### **What does the specifications of DID allow us to do?**
+
+  <!--As we have established, DIDs do not exist on a single registry. DIDs are implemented using [Methods](https://www.w3.org/TR/did-core/#methods) which refers to the approach or implementation of the DID. Different DID methods have different implementations, some are implemented on a Decentralized Ledge Technology (DLT) eg [btcr](https://w3c-ccg.github.io/didm-btcr/), [ethr](https://github.com/decentralized-identity/ethr-did-resolver/blob/master/doc/did-method-spec.md), [3](https://developers.ceramic.network/docs/advanced/standards/accounts/3id-did/) or stored on a specialized site eg GitHub, or on ephemeral DIDs with lighter requirements eg the ones used on IoT devices 
+
 
 
 
